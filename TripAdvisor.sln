@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripAdvisor", "TripAdvisor\TripAdvisor.csproj", "{1818E4A4-3CE9-44B4-AA02-6033AB727FC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Where2GoNow", "Where2GoNow\Where2GoNow.csproj", "{8859BC18-61B4-4D58-8CCD-2EC9F74E9476}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1818E4A4-3CE9-44B4-AA02-6033AB727FC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1818E4A4-3CE9-44B4-AA02-6033AB727FC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1818E4A4-3CE9-44B4-AA02-6033AB727FC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1818E4A4-3CE9-44B4-AA02-6033AB727FC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8859BC18-61B4-4D58-8CCD-2EC9F74E9476}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8859BC18-61B4-4D58-8CCD-2EC9F74E9476}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8859BC18-61B4-4D58-8CCD-2EC9F74E9476}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8859BC18-61B4-4D58-8CCD-2EC9F74E9476}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
