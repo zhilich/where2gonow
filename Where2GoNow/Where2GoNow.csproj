@@ -84,6 +84,7 @@
   <ItemGroup>
     <Content Include="css\dhtmlx.css" />
     <None Include="App_Data\map.json" />
+    <Content Include="css\main.css" />
     <Content Include="Global.asax" />
     <Content Include="images\marker-blue.png" />
     <Content Include="images\marker-green.png" />
@@ -91,6 +92,7 @@
     <Content Include="images\no-image.png" />
     <Content Include="index.html" />
     <Content Include="scripts\dhtmlx.js" />
+    <Content Include="scripts\main.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

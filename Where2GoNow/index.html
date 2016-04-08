@@ -6,55 +6,18 @@
         <title>Where2GoNow - Search for attractions on the map.</title>
         <link rel="stylesheet" type="text/css" href="css/dhtmlx.css"/>
         <link rel="stylesheet" type="text/css" href="//oss.maxcdn.com/semantic-ui/2.1.8/semantic.min.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
         <style>
-            html, body {
-              height: 100%;
-              margin: 0;
-              padding: 0;
-            }
-            
-            #map {
-              height: 100%;
-            }
-            
-            #details {
-              position: absolute;
-              top: 230px;
-              left: 11px;
-              display: none;
-            }
-            
-            .tripadvisor {
-              height: 24px;
-              font-weight: bold;
-              background: url('//static.tacdn.com/img2/branding/TA_550x370.png') top left / 36px 24px no-repeat;
-              padding-left: 36px;
-            }
-            
-            #filter {
-              position: absolute;
-              top: 60px;
-              left: 11px;
-            }
-            
-            #title {
-              cursor: pointer;
-            }
-
-            #title:hover {
-              color: #1a67a2;
-            }
-            
-            #photo {
-              cursor: pointer;
-            }
         </style>
     </head>
     <body>
+        <div id="loader" class="ui active inverted dimmer">
+            <div class="ui medium text loader"></div>
+        </div>
         <div id="map"></div>
         <div id="details">
             <div class="ui card">
-                <div class="image">
+                <div id="photo-container" class="image">
                     <img id="photo" src="images/no-image.png" onclick="navigate()" />
                 </div>
                 <div class="content">
@@ -83,15 +46,15 @@
                 <div class="content">
                     <img src="https://cdn2.iconfinder.com/data/icons/flat-ui-icons-24-px/24/location-24-128.png" height="16" width="16" />
                     <div class="ui mini icon input" style="margin-bottom: 15px; margin-left: 5px">
-                        <input id="location" type="text" placeholder="Search location..." size="38" value="41.878114, -87.629798">
+                        <input id="location" type="text" placeholder="My Location" size="38" value="">
                     </div>
                     <div style="margin-bottom: 30px">
                         <i class="wifi icon" style="position: absolute"></i>
-                        <div id="radius" style="margin-left: 24px;" skin="dhx_skyblue" min="10" max="1000" step="1" value="30" vertical="false" size="237"></div>
+                        <div id="radius" style="margin-left: 24px;" skin="dhx_skyblue" size="237" vertical="false"></div>
                     </div>
                     <div style="margin-bottom: 30px">
                         <i class="thumbs outline up icon" style="position: absolute"></i> 
-                        <div id="popularity" style="margin-left: 24px;" skin="dhx_skyblue" min="0" max="1000" step="1" value="20" vertical="false" size="237"></div>
+                        <div id="popularity" style="margin-left: 24px;" skin="dhx_skyblue" size="237" vertical="false"></div>
                     </div>
                     <div style="display: inline-block; margin-top: 20px; float: right">
                         <button class="ui primary button mini" onclick="initMap()">
@@ -105,131 +68,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         <script src="scripts/dhtmlx.js"></script>    
         <script src="//oss.maxcdn.com/semantic-ui/2.1.8/semantic.min.js"></script>
-        <script>
-            function initializeSlider(id, popupText) {
-              var slider = new dhtmlXSlider(id);
-              
-              // attach popup to slider
-              var myPop = new dhtmlXPopup({ slider: slider });
-              
-              // change popup value when slider moved
-              slider.attachEvent("onChange", function(value){
-                updatePopupValue(value);
-              });
-              
-              // set initial value for popup
-              updatePopupValue(slider.getValue());
-                        
-              function updatePopupValue(value) {
-                myPop.attachHTML(window.dhx4.template(popupText, {value:value}));
-              }
-              
-              return slider;
-            }
-            
-            function str2coords(str) {
-              var location = str.split(',');
-              return { lat: parseFloat(location[0]), lng: parseFloat(location[1]) };
-            }
-            
-            function initMap() {
-              var locationCoords = str2coords($("#location").val());
-              var radius = radiusSlider.conf.value;
-              var popularity = popularitySlider.conf.value;
-
-              $.getJSON("api/attractions/?lat=" + locationCoords.lat + "&lng=" + locationCoords.lng + "&radius=" + radius + "&popularity=" + popularity, function (attractions) {
-                    
-                    $("#details").hide();
-                    
-                    var map = new google.maps.Map(document.getElementById('map'), {
-                        zoom: 7,
-                        center: locationCoords
-                    });
-
-                    var marker = new google.maps.Marker({
-                        position: locationCoords,
-                        map: map,
-                        title: "My location",
-                        icon: "images/marker-red.png"
-                    });
-      
-                    var circle = new google.maps.Circle({
-                        strokeColor: '#FF0000',
-                        strokeOpacity: 0.8,
-                        strokeWeight: 2,
-                        fillColor: '#FF0000',
-                        fillOpacity: 0.05,
-                        map: map,
-                        center: locationCoords,
-                        radius: radius * 1609.34
-                    });
-      
-                    for (var i = 0; i < attractions.length; i++) {
-                        var attraction = attractions[i];
-
-                        var marker = new google.maps.Marker({
-                            position: { lat: attraction.lat, lng: attraction.lng },
-                            map: map,
-                            title: attraction.customHover.title,
-                            icon: "images/marker-blue.png"
-                        });
-
-                        marker.attraction = attraction;
-
-                        (function (marker) {
-                          google.maps.event.addListener(marker, 'click', function () {
-                            if (selected) {
-                              selected.setIcon("images/marker-blue.png");
-                            }
-                            selected = marker;
-
-                            marker.setIcon("images/marker-green.png");
-                              
-                            $("#title").text(marker.attraction.customHover.title);
-                            $("#category").text(marker.attraction.categories.join(", "));
-                            $("#rating")
-                              .rating({
-                                initialRating: Math.floor(marker.attraction.rating),
-                                maxRating: 5
-                            });
-                            $("#reviews").text(marker.attraction.reviews);
-                            
-                            var imageUrl = marker.attraction.imgUrl;
-                            if (!imageUrl) {
-                              imageUrl = "images/no-image.png";
-                            }
-                            
-                            $("#photo").attr("src", imageUrl);
-                            
-                            $("#details").show();
-                          });
-                        })(marker);
-                    }
-      
-                });
-          }
-          
-          function navigate() {
-            window.open("https://www.tripadvisor.com" + selected.attraction.url, '_blank');
-          }
-
-          var selected; //selected marker
-          
-          var radiusSlider = initializeSlider("radius", "Radius: #value# miles");          
-          var popularitySlider = initializeSlider("popularity", "Popularity: #value# reviews");
-          
-          //Determine user location
-          if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-              $("#location").val(position.coords.latitude + ", " + position.coords.longitude);
-              initMap();
-            }, initMap);
-          }
-          else {
-            initMap();
-          }
-         
-        </script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC35THnC72lgQq0IlQtMIsLaBdziDZHBwg"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC35THnC72lgQq0IlQtMIsLaBdziDZHBwg&libraries=places"></script>
+        <script src="scripts/main.js"></script>
     </body>
 </html>
