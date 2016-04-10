@@ -29,12 +29,13 @@ namespace Where2GoNow.Controllers
 
         // GET: api/Attractions
         [HttpGet]
-        public IEnumerable<Attraction> Get(double lat, double lng, double radius = 10, double popularity = 0)
+        public IEnumerable<Attraction> Get(double lat, double lng, double radius = 10, double popularity = 0, string categories = "")
         {
             foreach (var attraction in _attractions)
             {
                 if (GeoCodeCalc.CalcDistance(lat, lng, attraction.lat, attraction.lng) > radius) continue;
                 if (attraction.reviews < popularity) continue;
+                if (!GeoSearch.HasCategory(attraction, categories)) continue;
                 yield return attraction;
             }
         }

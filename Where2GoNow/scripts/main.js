@@ -48,8 +48,9 @@ function initMap() {
 
     var radius = radiusSlider.getAbsoluteValue();
     var popularity = popularitySlider.getAbsoluteValue();
+    var categories = $("#category-dropdown").dropdown("get value");
 
-    $.getJSON("api/attractions/?lat=" + geoLocation.lat + "&lng=" + geoLocation.lng + "&radius=" + radius + "&popularity=" + popularity, function (attractions) {
+    $.getJSON("api/attractions/?lat=" + geoLocation.lat + "&lng=" + geoLocation.lng + "&radius=" + radius + "&popularity=" + popularity + "&categories=" + encodeURIComponent(categories), function (attractions) {
 
         $("#details").hide();
         $("#loader").hide();
@@ -151,3 +152,12 @@ if (navigator.geolocation) {
 else {
     initMap();
 }
+
+$.getJSON("api/categories", function (categories) {
+    $.each(categories, function (key, value) {
+        $("#category-dropdown .menu").append('<div class="item" data-value="' + value.join(',') + '">' + key + '</div>');
+    })
+
+    $('#category-dropdown')
+      .dropdown("set selected", "All Categories");
+});

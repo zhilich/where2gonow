@@ -56,10 +56,22 @@
                         <i class="thumbs outline up icon" style="position: absolute"></i> 
                         <div id="popularity" style="margin-left: 24px;" skin="dhx_skyblue" size="237" vertical="false"></div>
                     </div>
+
                     <div style="display: inline-block; margin-top: 20px; float: right">
-                        <button class="ui primary button mini" onclick="initMap()">
-                        <i class="search icon"></i>
-                          Search
+
+                        <div id="category-dropdown" class="ui floating dropdown labeled icon button mini olive">
+                            <i class="filter icon"></i>
+                            <div class="default text">Category</div>
+                            <div class="menu">
+                                <div class="item" data-value="">
+                                    All Categories
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="ui primary button mini " onclick="initMap()">
+                            <i class="search icon"></i>
+                            Search
                         </button>
                     </div>
                 </div>

@@ -45,3 +45,8 @@
     max-height: 200px;
     overflow-y: hidden;
 }
+
+#category-dropdown {
+    position: relative;
+    top: 1px;
+}
