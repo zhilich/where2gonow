@@ -81,6 +81,14 @@ function initMap() {
             radius: radius * 1609.34
         });
 
+        var maxReviews = popularity;
+
+        for (var i = 0; i < attractions.length; i++) {
+            if (attractions[i].reviews > maxReviews) {
+                maxReviews = attractions[i].reviews;
+            }
+        }
+
         for (var i = 0; i < attractions.length; i++) {
             var attraction = attractions[i];
 
@@ -88,7 +96,8 @@ function initMap() {
                 position: { lat: attraction.lat, lng: attraction.lng },
                 map: map,
                 title: attraction.customHover.title,
-                icon: "images/marker-blue.png"
+                icon: "images/marker-blue.png",
+                opacity: 0.5 + 0.5 * (attraction.reviews / maxReviews)
             });
 
             marker.attraction = attraction;
@@ -153,11 +162,11 @@ else {
     initMap();
 }
 
+$('#category-dropdown')
+  .dropdown("set selected", "All Categories");
+
 $.getJSON("api/categories", function (categories) {
     $.each(categories, function (key, value) {
         $("#category-dropdown .menu").append('<div class="item" data-value="' + value.join(',') + '">' + key + '</div>');
     })
-
-    $('#category-dropdown')
-      .dropdown("set selected", "All Categories");
 });
