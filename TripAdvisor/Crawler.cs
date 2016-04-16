@@ -14,8 +14,8 @@ namespace TripAdvisor
     public class Crawler
     {
         private Regex imgRegex = new Regex("https://media-cdn.tripadvisor.com/media/photo-[^']+.jpg");
-        private Regex reviewsRegex = new Regex("(?<reviews>[0-9]+) review");
-        private Regex ratingRegex = new Regex(@"src=""https://static.tacdn.com/img2/x.gif"" alt=""(?<rating>[0-9.]+) of 5 stars""");
+        private Regex reviewsRegex = new Regex("(?<reviews>[0-9,.]+) review");
+        private Regex ratingRegex = new Regex(@"src=""https://static.tacdn.com/img2/x.gif"" alt=""(?<rating>[0-9,.]+) of 5 stars""");
         private Regex categoryRegex = new Regex("<div class=\"gray-footer \">(?<category>.*?)<\\/div>", RegexOptions.Singleline);
         
         private HashSet<Attraction> _attractions = new HashSet<Attraction>();
@@ -120,13 +120,13 @@ namespace TripAdvisor
 
                     Log($"reviews: {reviews}, rating: {rating}, categories: {categories}, image: {imgUrl}");
 
-                    attraction.categories = (categories ?? string.Empty).Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                    attraction.categories = (categories ?? string.Empty).Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Select(_c => _c.Trim(new char[] { ' ' })).ToArray();
                     
                     attraction.imgUrl = imgUrl;
 
                     if (!string.IsNullOrEmpty(reviews))
                     {
-                        attraction.reviews = int.Parse(reviews);
+                        attraction.reviews = int.Parse(reviews, System.Globalization.NumberStyles.AllowThousands);
                     }
 
                     if (!string.IsNullOrEmpty(rating))
