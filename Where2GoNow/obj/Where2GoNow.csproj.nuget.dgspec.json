@@ -1,0 +1,205 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Raman\\source\\repos\\git\\where2gonow\\Where2GoNow\\Where2GoNow.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Raman\\source\\repos\\git\\where2gonow\\TripAdvisor\\TripAdvisor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Raman\\source\\repos\\git\\where2gonow\\TripAdvisor\\TripAdvisor.csproj",
+        "projectName": "TripAdvisor",
+        "projectPath": "C:\\Users\\Raman\\source\\repos\\git\\where2gonow\\TripAdvisor\\TripAdvisor.csproj",
+        "packagesPath": "C:\\Users\\Raman\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Raman\\source\\repos\\git\\where2gonow\\TripAdvisor\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Raman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Raman\\source\\repos\\git\\where2gonow\\Where2GoNow.DataAccess\\Where2GoNow.DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Raman\\source\\repos\\git\\where2gonow\\Where2GoNow.DataAccess\\Where2GoNow.DataAccess.csproj",
+        "projectName": "Where2GoNow.DataAccess",
+        "projectPath": "C:\\Users\\Raman\\source\\repos\\git\\where2gonow\\Where2GoNow.DataAccess\\Where2GoNow.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\Raman\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Raman\\source\\repos\\git\\where2gonow\\Where2GoNow.DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Raman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Raman\\source\\repos\\git\\where2gonow\\TripAdvisor\\TripAdvisor.csproj": {
+                "projectPath": "C:\\Users\\Raman\\source\\repos\\git\\where2gonow\\TripAdvisor\\TripAdvisor.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AWSSDK.DynamoDBv2": {
+              "target": "Package",
+              "version": "[3.7.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Raman\\source\\repos\\git\\where2gonow\\Where2GoNow\\Where2GoNow.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Raman\\source\\repos\\git\\where2gonow\\Where2GoNow\\Where2GoNow.csproj",
+        "projectName": "Where2GoNow",
+        "projectPath": "C:\\Users\\Raman\\source\\repos\\git\\where2gonow\\Where2GoNow\\Where2GoNow.csproj",
+        "packagesPath": "C:\\Users\\Raman\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Raman\\source\\repos\\git\\where2gonow\\Where2GoNow\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Raman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Raman\\source\\repos\\git\\where2gonow\\TripAdvisor\\TripAdvisor.csproj": {
+                "projectPath": "C:\\Users\\Raman\\source\\repos\\git\\where2gonow\\TripAdvisor\\TripAdvisor.csproj"
+              },
+              "C:\\Users\\Raman\\source\\repos\\git\\where2gonow\\Where2GoNow.DataAccess\\Where2GoNow.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\Raman\\source\\repos\\git\\where2gonow\\Where2GoNow.DataAccess\\Where2GoNow.DataAccess.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Amazon.Lambda.AspNetCoreServer": {
+              "target": "Package",
+              "version": "[7.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Crossgen2.win-x64",
+              "version": "[6.0.9, 6.0.9]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+C:\Users\Raman\source\repos\Where2GoNow\TripAdvisor\obj\Debug\net6.0\TripAdvisor.csproj.AssemblyReference.cache
+C:\Users\Raman\source\repos\Where2GoNow\TripAdvisor\obj\Debug\net6.0\TripAdvisor.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Raman\source\repos\Where2GoNow\TripAdvisor\obj\Debug\net6.0\TripAdvisor.AssemblyInfoInputs.cache
+C:\Users\Raman\source\repos\Where2GoNow\TripAdvisor\obj\Debug\net6.0\TripAdvisor.AssemblyInfo.cs
+C:\Users\Raman\source\repos\Where2GoNow\TripAdvisor\obj\Debug\net6.0\TripAdvisor.csproj.CoreCompileInputs.cache
+C:\Users\Raman\source\repos\Where2GoNow\TripAdvisor\bin\Debug\net6.0\TripAdvisor.exe
+C:\Users\Raman\source\repos\Where2GoNow\TripAdvisor\bin\Debug\net6.0\TripAdvisor.deps.json
+C:\Users\Raman\source\repos\Where2GoNow\TripAdvisor\bin\Debug\net6.0\TripAdvisor.runtimeconfig.json
+C:\Users\Raman\source\repos\Where2GoNow\TripAdvisor\bin\Debug\net6.0\TripAdvisor.dll
+C:\Users\Raman\source\repos\Where2GoNow\TripAdvisor\bin\Debug\net6.0\TripAdvisor.pdb
+C:\Users\Raman\source\repos\Where2GoNow\TripAdvisor\obj\Debug\net6.0\TripAdvisor.dll
+C:\Users\Raman\source\repos\Where2GoNow\TripAdvisor\obj\Debug\net6.0\refint\TripAdvisor.dll
+C:\Users\Raman\source\repos\Where2GoNow\TripAdvisor\obj\Debug\net6.0\TripAdvisor.pdb
+C:\Users\Raman\source\repos\Where2GoNow\TripAdvisor\obj\Debug\net6.0\TripAdvisor.genruntimeconfig.cache
+C:\Users\Raman\source\repos\Where2GoNow\TripAdvisor\obj\Debug\net6.0\ref\TripAdvisor.dll
